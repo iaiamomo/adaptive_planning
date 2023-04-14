@@ -3,7 +3,7 @@ import connexion
 import json
 
 
-config_json = json.load(open('config.json', 'r'))
+config_json = json.load(open('../config.json', 'r'))
 mode = config_json['mode']
 
 if mode == 'plan':
