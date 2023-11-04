@@ -16,10 +16,6 @@ from memory_profiler import profile
 rnd = 0
 total_cost = 0
 
-config_json = json.load(open('config.json', 'r'))
-mode = config_json['mode']
-phase = config_json['phase']
-size = config_json['size']
 
 @profile
 def execute_downward(domain, problem):
@@ -28,19 +24,12 @@ def execute_downward(domain, problem):
     return result
 
 async def executionEngine(rnd, tot_cost):
-    if phase == 1:
-        domain = f"{config.PDDL['domainName']}_phase{phase}.pddl"
-        problem = f"{config.PDDL['problemName']}_phase{phase}.pddl"
-    elif phase == 2:
-        domain = f"{config.PDDL['domainName']}_phase{phase}_{size}.pddl"
-        problem = f"{config.PDDL['problemName']}_phase{phase}_{size}.pddl"
-    else:
-        domain = f"{config.PDDL['domainName']}.pddl"
-        problem = f"{config.PDDL['problemName']}.pddl"
+    domain = f"{config.PDDL['domainName']}.pddl"
+    problem = f"{config.PDDL['problemName']}.pddl"
 
     # Retrieve information of Things and construct PDDL domain and problem files
     print("Collecting problem data...")
-    desc = buildPDDL(phase, domain, problem)
+    desc = buildPDDL(domain, problem)
 
     #input("press enter to continue...")
     
@@ -51,15 +40,8 @@ async def executionEngine(rnd, tot_cost):
     now = time.time_ns()
     result = execute_downward(domain, problem)
     elapsed = time.time_ns() - now
+    
     print(f"elapsed time: {elapsed} ns")
-    if phase == 1:
-        file_name = f'profiling_phase{phase}.txt'
-    elif phase == 2:
-        file_name = f'profiling_phase{phase}_{size}.txt'
-    else:
-        file_name = f'profiling.txt'
-    with open(file_name, 'w+') as f:
-        f.write(f"elapsed time: {elapsed} ns\n")
     
     print(f"result planner: {result.returncode}")
     if (result.returncode > 9):
