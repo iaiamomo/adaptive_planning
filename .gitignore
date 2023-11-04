@@ -1,8 +1,5 @@
 downward
 industrial_services/actors_api_plan/client
-industrial_services/actors_api_mdp/client
-industrial_services/actors_api_plan/descriptions/*
-industrial_services/actors_api_mdp/descriptions/*
 
 *.pddl
 profiling*.txt

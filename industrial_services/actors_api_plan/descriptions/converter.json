@@ -1,0 +1,53 @@
+{
+    "id": "converter",
+    "attributes": {
+        "type": "Service",
+        "actions": {
+            "converting": {
+                "properties": {
+                    "type": "operation",
+                    "command": "convert",
+                    "cost": 1,
+                    "parameters": [
+                        "Object - o",
+                        "Location - l"
+                    ],
+                    "requirements": {
+                        "positive": [
+                            "o.heated:false",
+                            "o.cooled:false",
+                            "o.cooled:false",
+                            "o.at:l",
+                            "at:l",
+                            "status:available"
+                        ]
+                    },
+                    "effects": {
+                        "added": [
+                            "o.heated:true",
+                            "o.cooled:true",
+                            "o.cooled:true"
+                        ],
+                        "deleted": [
+                            "o.heated:false",
+                            "o.cooled:false",
+                            "o.cooled:false"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "features": {
+        "status":{
+            "properties": {
+                "value": "available"
+            }
+        },
+        "at": {
+            "properties": {
+                "value": "l03"
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "id": "rb2",
+    "attributes": {
+        "type": "Service",
+        "actions": {
+            "loading": {
+                "properties": {
+                    "type": "operation",
+                    "command": "load",
+                    "cost": 1,
+                    "parameters": [
+                        "Object - o",
+                        "Location - l"
+                    ],
+                    "requirements": {
+                        "positive": [
+                            "o.loaded:false",
+                            "o.at:l",
+                            "at:l",
+                            "status:available"
+                        ]
+                    },
+                    "effects": {
+                        "added": [
+                            "o.loaded:true"
+                        ],
+                        "deleted": [
+                            "o.loaded:false"
+                        ]
+                    }
+                }
+            },
+            "moving": {
+                "properties" : {
+                    "type": "operation",
+                    "command": "move",
+                    "cost": 1,
+                    "parameters": [
+                        "Location - l1",
+                        "Location - l2"
+                    ],
+                    "requirements": {
+                        "positive": [
+                            "at:l1",
+                            "status:available"
+                        ]
+                    },
+                    "effects": {
+                        "added": [
+                            "position:l2"
+                        ],
+                        "deleted": [
+                            "position:l1"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "features": {
+        "status":{
+            "properties": {
+                "value": "available"
+            }
+        },
+        "at": {
+            "properties": {
+                "value": "l24"
+            }
+        }
+    }
+}

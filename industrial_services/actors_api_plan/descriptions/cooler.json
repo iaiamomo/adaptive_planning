@@ -1,0 +1,48 @@
+{
+    "id": "cooler",
+    "attributes": {
+        "type": "Service",
+        "actions": {
+            "cooling": {
+                "properties": {
+                    "type": "operation",
+                    "command": "cool",
+                    "cost": 1,
+                    "parameters": [
+                        "Object - o",
+                        "Location - l"
+                    ],
+                    "requirements": {
+                        "positive": [
+                            "o.processed:true",
+                            "o.cooled:false",
+                            "o.at:l",
+                            "at:l",
+                            "status:available"
+                        ]
+                    },
+                    "effects": {
+                        "added": [
+                            "o.cooled:true"
+                        ],
+                        "deleted": [
+                            "o.cooled:false"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "features": {
+        "status":{
+            "properties": {
+                "value": "available"
+            }
+        },
+        "at": {
+            "properties": {
+                "value": "l22"
+            }
+        }
+    }
+}

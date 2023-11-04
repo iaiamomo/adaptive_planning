@@ -1,0 +1,48 @@
+{
+    "id": "processor",
+    "attributes": {
+        "type": "Service",
+        "actions": {
+            "processing": {
+                "properties": {
+                    "type": "operation",
+                    "command": "process",
+                    "cost": 1,
+                    "parameters": [
+                        "Object - o",
+                        "Location - l"
+                    ],
+                    "requirements": {
+                        "positive": [
+                            "o.heated:true",
+                            "o.processed:false",
+                            "o.at:l",
+                            "at:l",
+                            "status:available"
+                        ]
+                    },
+                    "effects": {
+                        "added": [
+                            "o.processed:true"
+                        ],
+                        "deleted": [
+                            "o.processed:false"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "features": {
+        "status":{
+            "properties": {
+                "value": "available"
+            }
+        },
+        "at": {
+            "properties": {
+                "value": "l22"
+            }
+        }
+    }
+}

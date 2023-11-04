@@ -1,0 +1,47 @@
+{
+    "id": "heater",
+    "attributes": {
+        "type": "Service",
+        "actions": {
+            "heating": {
+                "properties": {
+                    "type": "operation",
+                    "command": "heat",
+                    "cost": 1,
+                    "parameters": [
+                        "Object - o",
+                        "Location - l"
+                    ],
+                    "requirements": {
+                        "positive": [
+                            "o.heated:false",
+                            "o.at:l",
+                            "at:l",
+                            "status:available"
+                        ]
+                    },
+                    "effects": {
+                        "added": [
+                            "o.heated:true"
+                        ],
+                        "deleted": [
+                            "o.heated:false"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "features": {
+        "status":{
+            "properties": {
+                "value": "available"
+            }
+        },
+        "at": {
+            "properties": {
+                "value": "l20"
+            }
+        }
+    }
+}
