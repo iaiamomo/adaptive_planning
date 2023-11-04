@@ -1,0 +1,38 @@
+{
+    "id": "o1",
+    "attributes": {
+        "type": "Object"
+    },
+    "features": {
+        "loaded":{
+            "properties": {
+                "value": "false"
+            }
+        },
+        "at": {
+            "properties": {
+                "value": "l00"
+            }
+        },
+        "movable": {
+            "properties": {
+                "value": "true"
+            }
+        },
+        "heated": {
+            "properties": {
+                "value": "false"
+            }
+        },
+        "cooled": {
+            "properties": {
+                "value": "false"
+            }
+        },
+        "processed": {
+            "properties": {
+                "value": "false"
+            }
+        }
+    }
+}

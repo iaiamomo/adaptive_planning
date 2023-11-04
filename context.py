@@ -5,16 +5,22 @@ instances = {"Object":["o1"],
                          "l10","l11","l12","l13","l14","l15","l16",
                          "l20","l21","l22","l23","l24","l25","l26",
                          "l30","l31","l32","l33","l34","l35","l36"],
-             "Boolean":["true","false"]}
+             "Boolean":["true","false"],
+             "State":["available","broken"]}
+
+types = { "Object": [] }
 
 # predicates
 atomicTerms = [atomicTerm("heated","o - Object", "b - Boolean"),
                atomicTerm("processed","o - Object", "b - Boolean"),
                atomicTerm("cooled","o - Object", "b - Boolean"),
-               atomicTerm("movable","o - Object", "b - Boolean")]
+               atomicTerm("movable","o - Object", "b - Boolean"),
+               atomicTerm("loaded", "o - Object", "b - Boolean"),
+               atomicTerm("at", "o - Object", "l - Location"),
+               atomicTerm("at", "s - Service", "l - Location"),
+               atomicTerm("status", "s - Service", "s - State")]
 
-groundAtomicTerms = [groundAtomicTerm("at","o1","l00"),
-                     groundAtomicTerm("movable","o1","true")]
+groundAtomicTerms = []
 
 # strips: strips style
 # equality: "=" as built-in predicate

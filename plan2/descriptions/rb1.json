@@ -1,12 +1,12 @@
 {
-    "id": "rb2",
+    "id": "rb1",
     "attributes": {
-        "type": "ServiceRobot2",
+        "type": "ServiceRobot1",
         "actions": {
             "loading": {
                 "properties": {
                     "type": "operation",
-                    "command": "load2",
+                    "command": "load1",
                     "cost": 1,
                     "parameters": [
                         "Object - o",
@@ -15,6 +15,7 @@
                     "requirements": {
                         "positive": [
                             "o.loaded:false",
+                            "o.movable:true",
                             "o.at:l",
                             "at:l",
                             "status:available"
@@ -33,7 +34,7 @@
             "unloading": {
                 "properties": {
                     "type": "operation",
-                    "command": "unload2",
+                    "command": "unload1",
                     "cost": 1,
                     "parameters": [
                         "Object - o",
@@ -61,7 +62,7 @@
             "moving": {
                 "properties" : {
                     "type": "operation",
-                    "command": "move2",
+                    "command": "move1",
                     "cost": 1,
                     "parameters": [
                         "Location - l1",
@@ -88,12 +89,12 @@
     "features": {
         "status":{
             "properties": {
-                "value": "available"
+                "value": "broken"
             }
         },
         "at": {
             "properties": {
-                "value": "l24"
+                "value": "l31"
             }
         }
     }

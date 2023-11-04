@@ -1,13 +1,13 @@
 # Industrial APIs
 
-Implementing **Industrial APIs** for industrial actors (devices, machines, humans,...). 
+Implementing **Industrial APIs** for manufacturing actors (devices, machines, humans,...). 
 
-Follow the following **template** to generate the actors descriptions. The template represents a designer human. The different aspects of the actor are represented as attributes and features. <em>Features</em> represent a state with properties (e.g., <code>status</code>), while <em>attributes</em> (e.g., <code>type</code>, <code>actions</code>, <code>transitions</code>) represent functionalities and values that do not change or that change less frequently than the <em>features</em> property values.
+Follow the **template** to generate the actors descriptions. The different characteristics of the actor are represented as attributes and features. <em>Features</em> represent the dynamic properties (e.g., <code>status</code>) which change during the lifecycle of the actor, while <em>attributes</em> (e.g., <code>type</code>, <code>actions</code>, <code>transitions</code>) represent functionalities and values that do not change over time.
 ```json
 {
-  "id": "designerusa",
+  "id": "actor_id",
   "attributes": {
-      "type": "Service",
+      "type": "type_of_the_actor",
       "_comment": "static properties"
   },
   "features": {
@@ -17,12 +17,12 @@ Follow the following **template** to generate the actors descriptions. The templ
 ```
 
 ## Instructions
-Run the server representing a middleware exposing HTTP server and a websocket server:
+Run the server. It exposes an HTTP server and a websocket server:
 ```sh
 python app.py
 ```
 
-Run the services (which communicate with the server through websocket):
+Launch the actors (which communicate with the server through websocket):
 ```sh
 python launch_devices.py
 ```
@@ -38,6 +38,3 @@ Generate Python client from OpenAPI v3.0 specification:
 cd actors_api_plan/open_client_script
 ./generate-openapi-client.sh
 ```
-
-## Note
-If you want to execute Industrial APIs to use MDP orchestrator please make some changes in [app.py](app.py) and [launch_devices.py](launch_devices.py) files.

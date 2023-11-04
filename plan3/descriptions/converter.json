@@ -42,7 +42,7 @@
     "features": {
         "status":{
             "properties": {
-                "value": "available"
+                "value": "broken"
             }
         },
         "at": {

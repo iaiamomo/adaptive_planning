@@ -9,7 +9,7 @@ def buildPDDL(domain, problem):
     services = [] 
     capabilities = [] 
     tasks = [] 
-    groundAtomicTerms = []
+    groundAtomicTerms = context.groundAtomicTerms
     
     goal = context.goal
     atomicTerms = context.atomicTerms
