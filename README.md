@@ -22,11 +22,11 @@ cd downward
 
 ### How to run the code
 
-1. Put the descriptions of the industral actors inside [descriptions](industrial_services/actors_api_plan/descriptions/) folder (refer to [template](industrial_services/README.md)).
+1. Put the descriptions of the industral actors inside [descriptions](industrial_services/actors_api_plan/descriptions/) folder (refer to the [template](industrial_services/README.md)).
 
 2. Generate Python client from OpenAPI v3.0 specification:
 ```sh
-cd actors_api_plan/openapi_client_script
+cd industrial_services/actors_api_plan/openapi_client_script
 ./generate-openapi-client.sh
 ```
 
@@ -81,4 +81,4 @@ docker exec -it <CONTAINER_ID> bash
 
 2. Then, follow the instructions listed in the previous section.
 
-N.B. Use ``python3`` instead of ``python`` when launching components.
+N.B. When running the code using docker, remember to use ``python3`` instead of ``python`` when launching components.
