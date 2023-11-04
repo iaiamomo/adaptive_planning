@@ -2,6 +2,18 @@
 
 Implementation a tool to compose manufacturing actors via planning techniques.
 
+## Experimental results - Glass Factory
+[plan1](plan1), [plan2](plan2), [plan3](plan3) contains three different results based on three different initial conditions of the involved actors. The descriptions of the initial conditions of the actors are contained in the relative folders.
+
+- [plan1](plan1): all the actors are available and the resulting plan is the one involving **rb1** and **converter** to produce glass as it is the less expensive.
+
+- [plan2](plan2): **rb1** is *broken* and the resulting plan is the one involving **rb2** and **converter** to produce glass as it is the less expensive.
+
+- [plan3](plan3): **converter** is *broken* and the resulting plan is the one involving **rb2**, **heater**, **processor** and **cooler** to produce glass as it is the less expensive.
+
+### Reproduce the experiments
+To reproduce the experiments put the descriptions of the actors contained in the three folder inside [descriptions](industrial_services/actors_api_plan/descriptions) and follow the instructions listed below.
+
 ## Use the source code
 
 ### Preliminaries
