@@ -61,3 +61,6 @@ python launch_devices.py
 ```sh
 python orchestrator.py
 ```
+
+## License
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
